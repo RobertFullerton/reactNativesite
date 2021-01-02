@@ -6,6 +6,8 @@ import { View, Platform } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createAppContainer } from 'react-navigation';
+import About from './aboutComponent';
+import Contact from './contactComponent';
 
 const DirectoryNavigator = createStackNavigator(
     {
@@ -43,10 +45,47 @@ const HomeNavigator = createStackNavigator(
     }
 );
 
+
+const AboutNavigator = createStackNavigator(
+    {
+        About: { screen: About }
+    },
+    {
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: '#5637DD'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            }
+        }
+    }
+);
+
+const ContactNavigator = createStackNavigator(
+    {
+        About: { screen: Contact}
+    },
+    {
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: '#5637DD'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            }
+        }
+    }
+);
+
 const MainNavigator = createDrawerNavigator(
     {
         Home: { screen: HomeNavigator },
-        Directory: { screen: DirectoryNavigator }
+        Directory: { screen: DirectoryNavigator },
+        About: { screen: AboutNavigator },
+        Contact: {screen: ContactNavigator}
     },
     {
         drawerBackgroundColor: '#CEC8FF'
